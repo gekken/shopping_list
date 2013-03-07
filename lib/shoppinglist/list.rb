@@ -19,7 +19,6 @@ module ShoppingList
     end
 
 
-
     def save
       File.open(@location, 'w') do |f|
         f.write YAML.dump(@items)
@@ -30,17 +29,14 @@ module ShoppingList
       things = YAML.load_file(File.open("#{@directory}/#{list}"))
       things.reject! { |i| i.name == name }
       File.open(File.expand_path("#{@directory}/#{list}"), 'w') do |f|
-      File.open(File.expand_path("#{@directory}/#{list}"), 'w') do |f|
         f.write YAML.dump(things)
       end
     end
 
 
-
-
-    end
   end
 end
+
 
 
 

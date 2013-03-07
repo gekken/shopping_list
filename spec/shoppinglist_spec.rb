@@ -1,6 +1,4 @@
-require 'rspec'
 require 'spec_helper'
-#require 'shopping_list'
 
 describe ShoppingList do
 
@@ -30,7 +28,7 @@ describe ShoppingList do
   end
 
   context '#load!' do
-    it 'loads the list, wiping out any buffered additions' do
+    it 'loads the supplied list, wiping out any buffered additions' do
       $holding_list = list_subject2
 
       ShoppingList.load!('test_list')
@@ -42,8 +40,9 @@ describe ShoppingList do
   end
 
   context '#search' do
-    it 'returns the file(s) that has/have the specified item' do
-      ShoppingList.search('pants')
+    it 'returns an array of the file name(s) that has/have the specified item' do
+      ShoppingList.search('pants').should == [ShoppingList.full_path('list')]
+      puts ShoppingList.search('notebook')
     end
   end
 

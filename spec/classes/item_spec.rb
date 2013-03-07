@@ -1,6 +1,4 @@
-require 'rspec'
 require 'spec_helper'
-require 'shopping_list'
 
 describe ShoppingList::Item do
 
@@ -44,8 +42,8 @@ describe ShoppingList::Item do
     it 'saves the item to $holding_list' do
       subject.add_to_list
       subject2.add_to_list
-      expected = [  {:name=> 'notebook, three-ringed', :amount=>1, :store=> 'Staples', :category=> 'work supplies'},
-                    {:name=> 'pants', :amount=>2, :store=>nil, :category=> 'clothes'}]
+      expected = [{:name => 'notebook, three-ringed', :amount => 1, :store => 'Staples', :category => 'work supplies'},
+                  {:name => 'pants', :amount => 2, :store => nil, :category => 'clothes'}]
       $holding_list.collect { |i| i.to_hash }.should == expected
 
 

@@ -32,7 +32,9 @@ module ShoppingList
   end
 
   def self.search item
-
+    this = []
+    ShoppingList.file_list.each {|f|  YAML.load(File.open(f)).each {|i| this << f if i.name =~ /#{item}/}}
+    this
   end
 
 
