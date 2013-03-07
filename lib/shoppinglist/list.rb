@@ -5,7 +5,7 @@ module ShoppingList
     attr_accessor :items, :name, :location, :directory
 
     def initialize name=mylist
-      @directory = FileUtils.mkdir_p((File.expand_path '~/Dropbox/ShoppingList')).join
+      @directory = FileUtils.mkdir_p(ShoppingList.directory).join
       File.new "#{@directory}/#{@name}"
       @name = name
       @location = "#{@directory}/#{@name}"
@@ -30,20 +30,20 @@ module ShoppingList
       things = YAML.load_file(File.open("#{@directory}/#{list}"))
       things.reject! { |i| i.name == name }
       File.open(File.expand_path("#{@directory}/#{list}"), 'w') do |f|
+      File.open(File.expand_path("#{@directory}/#{list}"), 'w') do |f|
         f.write YAML.dump(things)
       end
     end
 
 
-    def list_string
-      self.directory
+
+
     end
-
-
   end
-
-
 end
+
+
+
 
 
 

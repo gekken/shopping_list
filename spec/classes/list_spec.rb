@@ -1,5 +1,5 @@
 require 'rspec'
-#require 'shopping_list'
+require 'shopping_list'
 
 describe ShoppingList::List do
 
