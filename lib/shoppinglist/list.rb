@@ -4,18 +4,21 @@ module ShoppingList
 
     attr_accessor :items, :name, :location, :directory
 
-    def initialize(name)
-      $directory  = FileUtils.mkdir_p((File.expand_path '~/Dropbox/ShoppingList')).join
-      File.new "#{$directory}/#{@name}"
+    def initialize name=mylist
+      @directory = FileUtils.mkdir_p((File.expand_path '~/Dropbox/ShoppingList')).join
+      File.new "#{@directory}/#{@name}"
+      @name = name
+      @location = "#{@directory}/#{@name}"
+      @items = $holding_list
 
-      @name       = name
-      @location   = "#{$directory}/#{@name}"
-      @items      = $holding_list
     end
+
 
     def list_to_hash
       {name: self.name, location: self.location, items: self.items}
     end
+
+
 
     def save
       File.open(@location, 'w') do |f|
@@ -23,9 +26,24 @@ module ShoppingList
       end
     end
 
+    def delete! name, list=@name
+      things = YAML.load_file(File.open("#{@directory}/#{list}"))
+      things.reject! { |i| i.name == name }
+      File.open(File.expand_path("#{@directory}/#{list}"), 'w') do |f|
+        f.write YAML.dump(things)
+      end
+    end
+
+
+    def list_string
+      self.directory
+    end
+
 
   end
 
+
 end
+
 
 
