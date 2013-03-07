@@ -1,6 +1,17 @@
-# Shoppinglist
+# ShoppingList
 
-TODO: Write a gem description
+This is a simple gem that creates shopping lists with an intentionally simple API.
+
+At this time, ShoppingList intentionally uses the standard *nix Dropbox(tm) installation location. ~/Dropbox/
+
+
+v1 will be a shoes application, with Windows compatibility
+v2 will be built in JRuby for Android use.
+v3 will be a Rails site that integrates the Android app, a desktop client, and the site.
+
+## Requirements
+
+working Dropbox installation at ~/Dropbox
 
 ## Installation
 
@@ -27,3 +38,5 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+[![Code Climate](https://codeclimate.com/github/gekken/shopping_list.png)](https://codeclimate.com/github/gekken/shopping_list)
