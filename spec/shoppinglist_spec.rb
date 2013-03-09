@@ -42,7 +42,7 @@ describe ShoppingList do
   context '#search' do
     it 'returns an array of the file name(s) that has/have the specified item' do
       ShoppingList.search('pants').should == [ShoppingList.full_path('list')]
-      puts ShoppingList.search('notebook')
+      #puts ShoppingList.search('notebook')
     end
   end
 
