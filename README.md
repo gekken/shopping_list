@@ -40,3 +40,4 @@ TODO: Write usage instructions here
 5. Create new Pull Request
 
 [![Code Climate](https://codeclimate.com/github/gekken/shopping_list.png)](https://codeclimate.com/github/gekken/shopping_list)
+[![Travis CI](https://travis-ci.org/gekken/shopping_list.png)](https://travis-ci.org/gekken/shopping_list.png)
