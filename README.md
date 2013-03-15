@@ -29,9 +29,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+currently, this gem is simply an API. 
+
 
 ## Contributing
+
+Contributions are not only welcome, but actively solicited and appreciated!
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
@@ -40,4 +43,5 @@ TODO: Write usage instructions here
 5. Create new Pull Request
 
 [![Code Climate](https://codeclimate.com/github/gekken/shopping_list.png)](https://codeclimate.com/github/gekken/shopping_list)
+
 [![Travis CI](https://travis-ci.org/gekken/shopping_list.png)](https://travis-ci.org/gekken/shopping_list.png)
